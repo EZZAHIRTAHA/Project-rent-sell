@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\VenteController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\clientCarController;
 use App\Http\Controllers\adminDashboardController;
@@ -23,6 +24,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/cars', [clientCarController::class, 'index'])->name('cars');
+Route::get('/vente', [VenteController::class, 'index'])->name('vente');
 Route::get('/cars/search', [carSearchController::class, 'search'])->name('carSearch');
 
 Route::get('location', function () {
