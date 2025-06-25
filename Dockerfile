@@ -29,12 +29,18 @@ COPY . .
 # ✅ Install Laravel dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
+# ✅ Laravel cache clear/build (optional but good)
+RUN php artisan config:clear \
+ && php artisan route:clear \
+ && php artisan view:clear \
+ && php artisan config:cache
+
 # ✅ Set permissions
 RUN chown -R www-data:www-data /var/www \
-    && chmod -R 775 storage bootstrap/cache
+ && chmod -R 775 storage bootstrap/cache
 
-# ✅ Expose port
+# ✅ Expose port for Railway (PORT will be injected)
 EXPOSE 8080
 
-# ✅ Start Laravel dev server (for Railway or Render)
-CMD php artisan serve --host=0.0.0.0 --port=${PORT}
+# ✅ Start Laravel dev server (for quick deployment)
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=${PORT}"]
