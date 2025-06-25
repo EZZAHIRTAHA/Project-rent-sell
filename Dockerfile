@@ -1,41 +1,32 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-apache
+
+# Enable Apache modules
+RUN a2enmod rewrite headers
 
 # Install system dependencies
-RUN apk add --no-cache \
-    nginx \
-    supervisor \
-    curl \
+RUN apt-get update && apt-get install -y \
+    build-essential \
     libpng-dev \
-    libjpeg-turbo-dev \
-    libwebp-dev \
-    freetype-dev \
-    libzip-dev \
+    libjpeg-dev \
+    libonig-dev \
+    libxml2-dev \
     zip \
     unzip \
+    curl \
     git \
-    oniguruma-dev \
-    postgresql-dev \
+    libzip-dev \
+    libpq-dev \
     nodejs \
-    npm
-
-# Install PHP extensions
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
-    && docker-php-ext-install -j$(nproc) \
-        pdo \
-        pdo_mysql \
-        pdo_pgsql \
-        mbstring \
-        exif \
-        pcntl \
-        bcmath \
-        gd \
-        zip
+    npm \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd zip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Set working directory
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 # Copy application files
 COPY . .
@@ -46,116 +37,69 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-d
 # Install and build Node.js dependencies
 RUN npm install && npm run build
 
+# Set Apache document root to Laravel's public directory
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
+# Configure Apache for Laravel
+RUN echo '<Directory /var/www/html/public>' >> /etc/apache2/apache2.conf \
+    && echo '    AllowOverride All' >> /etc/apache2/apache2.conf \
+    && echo '    Require all granted' >> /etc/apache2/apache2.conf \
+    && echo '</Directory>' >> /etc/apache2/apache2.conf
+
 # Create necessary directories and set permissions
 RUN mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache \
-    && chown -R www-data:www-data /var/www \
+    && chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
 
 # Generate application key
 RUN php artisan key:generate --no-interaction --force || true
 
-# Configure Nginx
-RUN mkdir -p /var/log/nginx
-COPY <<EOF /etc/nginx/nginx.conf
-worker_processes auto;
-pid /run/nginx.pid;
-
-events {
-    worker_connections 1024;
-}
-
-http {
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
-
-    access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
-
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_timeout 65;
-    types_hash_max_size 2048;
-
-    server {
-        listen 8080;
-        server_name _;
-        root /var/www/public;
-        index index.php index.html;
-
-        location / {
-            try_files \$uri \$uri/ /index.php?\$query_string;
-        }
-
-        location ~ \.php$ {
-            fastcgi_pass 127.0.0.1:9000;
-            fastcgi_index index.php;
-            fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
-            include fastcgi_params;
-        }
-
-        location ~ /\.ht {
-            deny all;
-        }
-    }
-}
-EOF
-
-# Configure Supervisor
-COPY <<EOF /etc/supervisor/conf.d/supervisord.conf
-[supervisord]
-nodaemon=true
-user=root
-logfile=/var/log/supervisor/supervisord.log
-pidfile=/var/run/supervisord.pid
-
-[program:php-fpm]
-command=php-fpm
-autostart=true
-autorestart=true
-stderr_logfile=/var/log/supervisor/php-fpm.err.log
-stdout_logfile=/var/log/supervisor/php-fpm.out.log
-
-[program:nginx]
-command=nginx -g "daemon off;"
-autostart=true
-autorestart=true
-stderr_logfile=/var/log/supervisor/nginx.err.log
-stdout_logfile=/var/log/supervisor/nginx.out.log
-EOF
-
 # Create startup script
-COPY <<EOF /usr/local/bin/start.sh
-#!/bin/sh
+RUN cat > /usr/local/bin/start.sh << 'EOL'
+#!/bin/bash
+set -e
+
 echo "Starting Laravel application..."
 
 # Set APP_URL if RAILWAY_PUBLIC_DOMAIN is available
-if [ ! -z "\$RAILWAY_PUBLIC_DOMAIN" ]; then
-    export APP_URL="https://\$RAILWAY_PUBLIC_DOMAIN"
-    echo "APP_URL set to: \$APP_URL"
+if [ ! -z "$RAILWAY_PUBLIC_DOMAIN" ]; then
+    export APP_URL="https://$RAILWAY_PUBLIC_DOMAIN"
+    echo "APP_URL set to: $APP_URL"
 fi
 
+# Wait for services to be ready
+echo "Waiting for services to be ready..."
+sleep 5
+
 # Clear caches
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
+echo "Clearing caches..."
+php artisan config:clear || true
+php artisan route:clear || true
+php artisan view:clear || true
 
 # Cache configurations for production
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+echo "Caching configurations..."
+php artisan config:cache || true
+php artisan route:cache || true
+php artisan view:cache || true
 
 # Run migrations
-php artisan migrate --force
+echo "Running migrations..."
+php artisan migrate --force || true
 
-# Create supervisor log directory
-mkdir -p /var/log/supervisor
-
-# Start supervisor (which starts both PHP-FPM and Nginx)
-exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
-EOF
+# Start Apache
+echo "Starting Apache..."
+exec apache2-foreground
+EOL
 
 RUN chmod +x /usr/local/bin/start.sh
+
+# Set the correct port for Railway
+ENV PORT=8080
+RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
+RUN sed -i 's/:80/:8080/' /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 8080
 
