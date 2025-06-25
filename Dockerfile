@@ -1,0 +1,35 @@
+# Use official PHP image with necessary extensions
+FROM php:8.2-fpm
+
+# Set working directory
+WORKDIR /var/www
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libjpeg-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    curl \
+    git \
+    nano \
+    libzip-dev \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd zip
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Copy project files
+COPY . .
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www
+
+# Expose port (not strictly necessary here but can be helpful)
+EXPOSE 9000
+
+CMD ["php-fpm"]
