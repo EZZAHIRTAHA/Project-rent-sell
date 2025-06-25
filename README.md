@@ -41,3 +41,21 @@ docker exec -it laravel-app chown -R www-data:www-data storage bootstrap/cache
 npm install
 npm run dev
 http://localhost:8001
+
+
+APP_NAME=Laravel
+APP_ENV=production
+APP_KEY=base64:WTj1VpSWRnvVeEGrsFdmguXuJ7dAvrSs9D5sh7yCVds=
+APP_DEBUG=false
+APP_URL=https://project-rent-sell.onrender.com
+
+DB_CONNECTION=mysql
+DB_HOST=mysql-abc123.render.com
+DB_PORT=3306
+DB_DATABASE=realrentcar
+DB_USERNAME=renderuser
+DB_PASSWORD=StrongPassword123!
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_CONNECTION=sync
