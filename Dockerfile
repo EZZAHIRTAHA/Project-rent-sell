@@ -23,7 +23,15 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 COPY . .
 
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
+
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+
+# Install and build assets
+RUN npm install
+RUN npm run build
 
 # Create directories and set permissions
 RUN mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache
