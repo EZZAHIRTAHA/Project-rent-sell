@@ -26,11 +26,15 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Copy project files
 COPY . .
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www
+# ✅ Install Laravel dependencies
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Expose port (not strictly necessary here but can be helpful)
+# ✅ Set permissions
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 775 storage bootstrap/cache
+
+# ✅ Expose port
 EXPOSE 8080
+
+# ✅ Start Laravel dev server (for Railway or Render)
 CMD php artisan serve --host=0.0.0.0 --port=${PORT}
-
-
