@@ -4,46 +4,74 @@ namespace App\Http\Controllers;
 
 use App\Models\Vente;
 use App\Models\Car;
+use App\Models\Coupon;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class VenteController extends Controller
 {
     public function index()
     {
-        $cars = Car::all();
+        $cars = Car::where('quantity', '>', 1)->get();
         return view('vente.vente', compact('cars'));
     }
 
-    public function create()
+    public function create($car_id)
     {
-        $cars = Car::all();
-        $users = User::all();
-        return view('cars_ventes.create', compact('cars', 'users'));
+        $user = auth()->user();
+        $car = Car::find($car_id);
+        return view('vente.create', compact('car', 'user'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $car_id)
     {
-        $validator = Validator::make($request->all(), [
-            'car_id' => 'required|exists:cars,id',
-            'user_id' => 'nullable|exists:users,id',
+        $request->validate([
+            'full-name' => 'required|string|max:255',
+            'email' => 'required|email',
             'quantity' => 'required|integer|min:1',
-            'price_unit' => 'required|numeric|min:0',
-            'payment_method' => 'nullable|string|max:255',
-            'sold_at' => 'nullable|date',
         ]);
 
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+        $car = Car::findOrFail($car_id);
+        $user = Auth::user();
+
+        $quantity = $request->input('quantity');
+        $unitPrice = $car->prix_vente;
+        $discountPercentage = 0;
+
+        // Handle optional coupon (if passed)
+        if ($request->filled('applied_coupon')) {
+            $coupon = Coupon::where('code', $request->applied_coupon)->first();
+            if ($coupon && $coupon->isValid()) {
+                $discountPercentage = $coupon->discount_percentage;
+            }
         }
 
-        $data = $validator->validated();
-        $data['total_price'] = $data['price_unit'] * $data['quantity'];
+        $basePrice = $quantity * $unitPrice;
+        $discountAmount = $basePrice * ($discountPercentage / 100);
+        $finalPrice = $basePrice - $discountAmount;
 
-        $vente = Vente::create($data);
+        // Create the vente
+        $vente = new Vente();
+        $vente->user_id = $user->id;
+        $vente->car_id = $car->id;
+        $vente->quantity = $quantity;
+        $vente->price_unit = $unitPrice;
+        $vente->total_price = $finalPrice;
+        $vente->payment_method = 'At store';
+        $vente->sold_at = Carbon::now();
+        $vente->save();
 
-        return response()->json(['message' => 'Vente created successfully', 'vente' => $vente]);
+        // Update car stock if needed
+        $car->quantity -= $quantity;
+        if ($car->quantity <= 0) {
+            $car->status = 'Sold';
+        }
+        $car->save();
+
+        return view('thankyouVente', ['vente' => $vente]);
     }
 
     public function show($id)

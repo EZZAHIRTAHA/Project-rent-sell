@@ -12,6 +12,7 @@ use App\Http\Controllers\addNewAdminController;
 use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\AdminAuth\LoginController;
 use App\Http\Controllers\carSearchController;
+use App\Http\Controllers\CouponController;
 use App\Models\User;
 use App\Models\Car;
 use App\Models\Reservation;
@@ -117,9 +118,11 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
 
 // ------------------- client routes --------------------------------------- //
-
+Route::post('/coupon/validate', [CouponController::class, 'validateCoupon'])->name('coupon.validate');
 Route::get('/reservations/{car}', [ReservationController::class, 'create'])->name('car.reservation')->middleware('auth', 'restrictAdminAccess');
+Route::get('/buy/{car}', [VenteController::class, 'create'])->name('car.buy')->middleware('auth', 'restrictAdminAccess');
 Route::post('/reservations/{car}', [ReservationController::class, 'store'])->name('car.reservationStore')->middleware('auth', 'restrictAdminAccess');
+Route::post('/buy/{car}', [VenteController::class, 'store'])->name('car.buyStore')->middleware('auth', 'restrictAdminAccess');
 
 Route::get('/reservations', function () {
 
@@ -129,6 +132,7 @@ Route::get('/reservations', function () {
 
 
 route::get('invoice/{reservation}', [invoiceController::class, 'invoice'])->name('invoice')->middleware('auth', 'restrictAdminAccess');
+route::get('invoiceVente/{vente}', [invoiceController::class, 'invoiceVente'])->name('invoiceVente')->middleware('auth', 'restrictAdminAccess');
 
 
 //---------------------------------------------------------------------------//
