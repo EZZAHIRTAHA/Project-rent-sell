@@ -132,6 +132,7 @@ Route::get('/reservations', function () {
 
 
 route::get('invoice/{reservation}', [invoiceController::class, 'invoice'])->name('invoice')->middleware('auth', 'restrictAdminAccess');
+route::get('invoiceVente/{vente}', [invoiceController::class, 'invoiceVente'])->name('invoiceVente')->middleware('auth', 'restrictAdminAccess');
 
 
 //---------------------------------------------------------------------------//

@@ -71,7 +71,7 @@ class VenteController extends Controller
         }
         $car->save();
 
-        return view('thankyou', ['vente' => $vente]);
+        return view('thankyouVente', ['vente' => $vente]);
     }
 
     public function show($id)
