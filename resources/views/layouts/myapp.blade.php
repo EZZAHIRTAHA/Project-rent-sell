@@ -367,11 +367,11 @@
                             <h2 class="mb-6 text-sm font-semibold  uppercase text-white">Follow us</h2>
                             <ul class="text-gray-400">
                                 <li class="mb-4">
-                                    <a href="https://github.com/Mohamed-Galdi/RealRentCar" class="hover:underline "
+                                    <a href="https://github.com/EZZAHIRTAHA" class="hover:underline "
                                         target='_blank'>Github</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.linkedin.com/in/mohamed-galdi/" class="hover:underline"
+                                    <a href="https://www.linkedin.com/in/taha-ezzahir-5b213b254/" class="hover:underline"
                                         target='_blank'>Linkedin</a>
                                 </li>
                             </ul>
@@ -396,9 +396,9 @@
                 <hr class="my-6  sm:mx-auto border-gray-700 lg:my-8" />
 
                 <div class="sm:flex sm:items-center sm:justify-between md:ms-0 pb-4  ms-32">
-                    <span class="text-sm sm:text-center text-gray-400 md:ms-0 -ms-8">© 2022 <a
+                    <span class="text-sm sm:text-center text-gray-400 md:ms-0 -ms-8">© 2025 <a
                             href="https://www.linkedin.com/in/mohamed-galdi/" target='_blank'
-                            class="hover:underline">Galdi.dev™</a>. All Rights Reserved.
+                            class="hover:underline"> Projet devops </a>. All Rights Reserved.
                     </span>
                     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                         <a href="https://github.com/Mohamed-Galdi/RealRentCar" target='_blank'
