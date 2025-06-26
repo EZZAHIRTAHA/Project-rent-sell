@@ -11,7 +11,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                car: ["Rubik"],
+                car: ["Rubik",'poppins',"sans-serif"],
             },
             colors: {
                 pr: {

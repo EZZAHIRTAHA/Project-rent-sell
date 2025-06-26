@@ -27,7 +27,7 @@
     @foreach ($cars as $car)
       <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 w-full max-w-xs mx-auto">
     <div class="relative">
-        <a href="{{ route('car.reservation', ['car' => $car->id]) }}">
+        <a href="{{ route('car.buy', ['car' => $car->id]) }}">
             <img class="w-full h-48 object-cover rounded-t-xl" src="{{ $car->image }}" alt="{{ $car->brand }}">
             @if($car->reduce)
                 <span class="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">
@@ -71,7 +71,7 @@
 
         <p class="mt-2 text-sm text-gray-700"><strong>Available:</strong> {{ $car->quantity }} cars</p>
 
-        <a href="{{ route('car.reservation', ['car' => $car->id]) }}"
+        <a href="{{ route('car.buy', ['car' => $car->id]) }}"
             class="mt-4 inline-flex items-center justify-center w-full bg-slate-900 text-white py-2 px-4 rounded-lg hover:bg-pr-400 transition">
             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 512 512">
                 <path
