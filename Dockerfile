@@ -47,12 +47,15 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-d
 RUN npm install && npm run build
 
 # Create necessary directories and set permissions
-RUN mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache \
+RUN mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache storage/app/public \
     && chown -R www-data:www-data /var/www \
     && chmod -R 775 storage bootstrap/cache
 
 # Generate application key
 RUN php artisan key:generate --no-interaction --force || true
+
+# Create storage link
+RUN php artisan storage:link || true
 
 # Configure Nginx
 RUN mkdir -p /var/log/nginx
@@ -139,8 +142,12 @@ RUN echo '#!/bin/sh' > /usr/local/bin/start.sh && \
     echo 'php artisan config:cache || true' >> /usr/local/bin/start.sh && \
     echo 'php artisan route:cache || true' >> /usr/local/bin/start.sh && \
     echo 'php artisan view:cache || true' >> /usr/local/bin/start.sh && \
+    echo 'echo "Creating storage link..."' >> /usr/local/bin/start.sh && \
+    echo 'php artisan storage:link || true' >> /usr/local/bin/start.sh && \
     echo 'echo "Running migrations..."' >> /usr/local/bin/start.sh && \
     echo 'php artisan migrate --force || true' >> /usr/local/bin/start.sh && \
+    echo 'echo "Seeding database..."' >> /usr/local/bin/start.sh && \
+    echo 'php artisan db:seed --force || true' >> /usr/local/bin/start.sh && \
     echo 'mkdir -p /var/log/supervisor' >> /usr/local/bin/start.sh && \
     echo 'echo "Starting services..."' >> /usr/local/bin/start.sh && \
     echo 'exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf' >> /usr/local/bin/start.sh
