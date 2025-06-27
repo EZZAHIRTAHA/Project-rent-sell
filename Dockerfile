@@ -146,8 +146,8 @@ RUN echo '#!/bin/sh' > /usr/local/bin/start.sh && \
     echo 'php artisan storage:link || true' >> /usr/local/bin/start.sh && \
     echo 'echo "Running migrations..."' >> /usr/local/bin/start.sh && \
     echo 'php artisan migrate --force || true' >> /usr/local/bin/start.sh && \
-    echo 'echo "Seeding database..."' >> /usr/local/bin/start.sh && \
-    echo 'php artisan db:seed --force || true' >> /usr/local/bin/start.sh && \
+#    echo 'echo "Seeding database..."' >> /usr/local/bin/start.sh && \
+#    echo 'php artisan db:seed --force || true' >> /usr/local/bin/start.sh && \
     echo 'mkdir -p /var/log/supervisor' >> /usr/local/bin/start.sh && \
     echo 'echo "Starting services..."' >> /usr/local/bin/start.sh && \
     echo 'exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf' >> /usr/local/bin/start.sh
