@@ -10,6 +10,7 @@
     <div class="flex md:flex-row flex-col justify-between max-w-screen-xl md:px-16 px-8 mx-auto gap-12 ">
         <div class="md:w-1/2 order-last md:order-first mb-12 ">
             <form action="#" class="space-y-8" id="contact-form">
+                @csrf
                 <div class="flex justify-between">
                     <div class="w-full mr-5">
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">First
