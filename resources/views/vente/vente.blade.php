@@ -3,6 +3,7 @@
 @section('content')
 <div class="bg-gray-200 mx-auto max-w-screen-xl mt-10 p-3 rounded-md shadow-xl">
     <form action="{{ route('carSearch') }}">
+        @csrf
         <div class="flex flex-col md:flex-row md:gap-28 gap-4 justify-center">
             <div class="flex flex-col md:flex-row md:gap-16 gap-2">
                 <input type="text" name="brand" placeholder="Brand"

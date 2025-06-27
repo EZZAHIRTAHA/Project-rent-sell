@@ -2,6 +2,7 @@
 @section('content')
     <div class="max-w-screen-xl p-3 mx-auto mt-10 bg-gray-200 rounded-md shadow-xl">
         <form action="">
+            @csrf
            <div class="flex justify-center md:flex-row flex-col md:gap-28 gap-4">
                 <div class="flex justify-evenly md:flex-row flex-col md:gap-16 gap-2">
                     <input type="text" placeholder="brand" name="brand"
