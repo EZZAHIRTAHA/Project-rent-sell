@@ -90,7 +90,7 @@
                             <li>
                                 <a href="/vente">
                                     <div class="group text-center">
-                                        <div class="group-hover:cursor-pointer">Vente</div>
+                                        <div class="group-hover:cursor-pointer">Sell</div>
                                         <div
                                             class="block invisible bg-pr-400 w-12 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
                                         </div>
@@ -232,7 +232,7 @@
                                  <li>
                                 <a href="/vente">
                                     <div class="group text-center">
-                                        <div class="group-hover:cursor-pointer">Vente</div>
+                                        <div class="group-hover:cursor-pointer">Sell</div>
                                         <div
                                             class="block invisible bg-pr-400 w-12 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
                                         </div>
