@@ -20,10 +20,18 @@ class CarSeeder extends Seeder
                 'engine' => '2.5L',
                 'price_per_day' => 50,
                 'image' => '/images/cars/Toyota_Camry.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
                 'reduce' => 30,
                 'stars' => 5,
+                'year' => 2021,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 250000,
+                'description' => 'Experience the perfect blend of elegance, innovation, and dependability with the Toyota Camry 2.5L. This midsize sedan combines a striking exterior design with a refined cabin crafted from premium materials, offering spacious comfort for every passenger. Under the hood, the efficient yet powerful 2.5L engine delivers smooth acceleration and responsive handling, making city driving and highway cruising equally enjoyable. Advanced safety technologies and cutting-edge infotainment ensure every journey is secure and entertaining, while Toyota’s legendary reliability gives you peace of mind mile after mile. The Camry stands out as a timeless choice for drivers who demand style, performance, and lasting value.'
+
             ],
             [
                 'brand' => 'Honda',
@@ -31,10 +39,17 @@ class CarSeeder extends Seeder
                 'engine' => '1.8L',
                 'price_per_day' => 45,
                 'image' => '/images/cars/Honda_Civic.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
                 'reduce' => 10,
                 'stars' => 5,
+                'year' => 2018,
+                'color' => 'Gray',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 290000,
+                'description' => 'Discover the spirit of driving pleasure in the Honda Civic 1.8L. Its aerodynamic silhouette and sporty stance perfectly complement a sophisticated interior designed for comfort and connectivity. Powered by a responsive 1.8L engine, the Civic balances spirited performance with outstanding fuel efficiency, making it ideal for both urban commutes and weekend adventures. Inside, you’ll find intuitive technology, quality materials, and thoughtful storage solutions, all crafted to elevate your driving experience. Renowned for its reliability, safety, and low running costs, the Civic remains a beloved choice among drivers who value practicality wrapped in a dynamic, youthful design.'
             ],
             [
                 'brand' => 'Ford',
@@ -42,10 +57,17 @@ class CarSeeder extends Seeder
                 'engine' => '5.0L V8',
                 'price_per_day' => 70,
                 'image' => '/images/cars/Ford_Mustang.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
                 'reduce' => 0,
                 'stars' => 5,
+                'year' => 2017,
+                'color' => 'Brown',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 450000,
+                'description' => 'Unleash raw power and iconic style with the Ford Mustang 5.0L V8. This legendary muscle car roars to life with its naturally aspirated V8 engine, delivering exhilarating acceleration and an unmistakable exhaust note that thrills enthusiasts worldwide. The bold exterior features aggressive lines, signature lighting, and aerodynamic enhancements that turn heads on every street. Inside, the cockpit is driver-focused, blending modern technology with classic Mustang design cues. From track days to scenic drives, the Mustang promises an authentic, visceral experience that pays homage to its storied heritage while embracing modern innovation and comfort.'
             ],
             [
                 'brand' => 'BMW',
@@ -53,11 +75,18 @@ class CarSeeder extends Seeder
                 'engine' => '3.0L',
                 'price_per_day' => 80,
                 'image' => '/images/cars/BMW_X5.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2022,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 357000,
+                'description' => 'Step into the realm of refined luxury and versatile performance with the BMW X5 3.0L. This premium SUV seamlessly marries athletic styling with everyday practicality. Its robust 3.0L engine delivers a harmonious blend of power and efficiency, ensuring effortless highway cruising and spirited handling on winding roads. Inside, the cabin exudes sophistication with high-quality materials, customizable ambient lighting, and state-of-the-art technology that keeps you connected and entertained. Ample cargo space and advanced safety systems make the X5 equally suited for family adventures and business travel, reaffirming its position as a benchmark in the luxury SUV segment.'
             ],
             [
                 'brand' => 'Mercedes-Benz',
@@ -65,11 +94,18 @@ class CarSeeder extends Seeder
                 'engine' => '2.0L',
                 'price_per_day' => 65,
                 'image' => '/images/cars/Mercedes-Benz_E-Class.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 10,
                 'stars' => 5,
+                'year' => 2019,
+                'color' => 'Gray',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 445000,
+                'description' => 'The Mercedes-Benz E-Class 2.0L embodies timeless elegance and advanced engineering. Crafted with meticulous attention to detail, its sculpted exterior exudes confidence, while the opulent interior offers comfort beyond compare. The refined 2.0L engine ensures a smooth, quiet ride, supported by cutting-edge suspension and driver-assistance technologies that elevate safety and convenience. From the intuitive infotainment system to ambient lighting and luxurious finishes, every element of the E-Class is designed to delight. It’s more than a car; it’s a statement of sophistication for discerning drivers who appreciate understated luxury and impeccable performance.'
             ],
             [
                 'brand' => 'Chevrolet',
@@ -77,23 +113,37 @@ class CarSeeder extends Seeder
                 'engine' => '1.5L',
                 'price_per_day' => 55,
                 'image' => '/images/cars/Chevrolet_Malibu.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 50,
                 'stars' => 5,
+                'year' => 2023,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 330000,
+                'description' => 'Embrace the art of everyday driving with the Chevrolet Malibu 1.5L. Its sleek exterior design hints at sporty character, while the efficient 1.5L turbocharged engine offers responsive performance and excellent fuel economy. Inside, the spacious cabin provides comfort and modern connectivity features, including smartphone integration and a user-friendly infotainment system. Advanced safety technologies help protect you and your loved ones, making every commute or road trip worry-free. The Malibu strikes the perfect balance between practicality, value, and contemporary style, appealing to drivers who demand more from their midsize sedan.'
             ],
             [
                 'brand' => 'Audi',
                 'model' => 'A4',
                 'engine' => '2.0L',
-                'price_per_day' => 70, 5,
+                'price_per_day' => 70,
+                5,
                 'image' => '/images/cars/Audi_A4.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 40,
                 'stars' => 5,
+                'year' => 2022,
+                'color' => 'Gray',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,'prix_vente' => 580000,
+                'description' => 'Experience the precision and elegance of German engineering in the Audi A4 2.0L. Its dynamic design seamlessly blends sportiness with refined luxury, highlighted by sharp LED lighting and a distinctive single-frame grille. Under the hood, the responsive 2.0L engine delivers engaging performance and remarkable efficiency. The meticulously crafted interior features premium materials, advanced infotainment, and intuitive controls, creating a sophisticated yet driver-centric environment. With legendary quattro all-wheel drive and state-of-the-art safety systems, the A4 offers confidence and comfort in every condition, redefining what it means to drive a compact executive sedan.'
             ],
             [
                 'brand' => 'Nissan',
@@ -101,11 +151,18 @@ class CarSeeder extends Seeder
                 'engine' => '2.5L',
                 'price_per_day' => 50,
                 'image' => '/images/cars/Nissan_Altima.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 60,
                 'stars' => 5,
+                'year' => 2025,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 250080,
+                'description' => 'Discover modern design, comfort, and technology with the Nissan Altima 2.5L. Its sleek exterior lines exude sophistication, while the spacious interior invites you to relax with supportive seating and advanced features. Powered by a capable 2.5L engine, the Altima delivers a smooth and responsive drive, ideal for both city streets and open highways. Cutting-edge safety systems and driver aids enhance confidence behind the wheel, making every journey secure and enjoyable. Blending value, reliability, and style, the Altima is an appealing choice for those who refuse to compromise.'
             ],
             [
                 'brand' => 'Hyundai',
@@ -113,11 +170,18 @@ class CarSeeder extends Seeder
                 'engine' => '2.5L',
                 'price_per_day' => 45,
                 'image' => '/images/cars/Hyundai_Sonata.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 30,
                 'stars' => 5,
+                'year' => 2025,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 250000,
+                'description' => 'Bold design meets advanced technology in the Hyundai Sonata 2.5L. Its sculpted lines and modern grille make a statement on any road, while the spacious interior offers comfort, quality finishes, and user-friendly tech. The responsive 2.5L engine provides ample power without sacrificing efficiency, making daily commutes and long trips equally rewarding. Safety comes standard, with an array of intelligent driver-assistance features designed to protect you and your passengers. The Sonata stands out for its blend of practicality, style, and modern convenience, redefining expectations in the midsize sedan category.'
             ],
             [
                 'brand' => 'Kia',
@@ -125,11 +189,19 @@ class CarSeeder extends Seeder
                 'engine' => '2.0L',
                 'price_per_day' => 45,
                 'image' => '/images/cars/Kia_Optima.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2024,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 335800,
+                'description' => 'The Kia Optima 2.0L combines contemporary styling with everyday practicality. Its streamlined silhouette and bold front fascia project confidence, while the refined interior offers a welcoming space equipped with advanced connectivity and comfort features. The efficient 2.0L engine ensures a balance of performance and economy, making it perfect for daily driving. Enhanced safety technologies and thoughtful design touches complete the package, making the Optima a compelling choice for drivers who appreciate value wrapped in sophistication.'
+
             ],
             [
                 'brand' => 'Volkswagen',
@@ -137,11 +209,19 @@ class CarSeeder extends Seeder
                 'engine' => '1.4L',
                 'price_per_day' => 60,
                 'image' => '/images/cars/Volkswagen_Golf.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 40,
                 'stars' => 5,
+                'year' => 2020,
+                'color' => 'Gray',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 450000,
+                'description' => 'Compact yet versatile, the Volkswagen Golf 1.4L delivers a premium driving experience rarely found in its class. The turbocharged engine offers spirited performance paired with exceptional fuel efficiency, while the iconic hatchback design provides flexible cargo space and urban maneuverability. Inside, the cabin features quality materials and advanced technology, including intuitive infotainment and driver assistance systems. Whether navigating city streets or exploring scenic routes, the Golf stands as a testament to timeless design and German engineering excellence.'
+
             ],
             [
                 'brand' => 'Subaru',
@@ -149,11 +229,18 @@ class CarSeeder extends Seeder
                 'engine' => '2.0L',
                 'price_per_day' => 60,
                 'image' => '/images/cars/Subaru_Impreza.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2018,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 560000,
+                'description' => 'Go anywhere with confidence in the Subaru Impreza 2.0L. Standard all-wheel drive, a hallmark of the brand, ensures traction and stability in all weather conditions. The efficient 2.0L engine delivers reliable performance, while the thoughtfully designed interior offers spacious seating, intuitive controls, and modern infotainment. Advanced safety features come standard, making the Impreza a practical and reassuring choice for drivers who value adventure and everyday versatility.'
             ],
             [
                 'brand' => 'Ford',
@@ -161,11 +248,18 @@ class CarSeeder extends Seeder
                 'engine' => '1.6L',
                 'price_per_day' => 50,
                 'image' => '/images/cars/Ford_Focus.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 30,
                 'stars' => 5,
+                'year' => 2014,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 480000,
+                'description' => 'The Ford Focus 1.6L combines agile handling, modern styling, and everyday efficiency. Its compact size makes city driving effortless, while the responsive engine ensures enjoyable performance. Inside, the cabin provides user-friendly tech and comfortable seating, creating a pleasant environment for both driver and passengers. Known for its balance of practicality and fun-to-drive character, the Focus remains a popular choice among urban drivers and first-time buyers alike.'
             ],
             [
                 'brand' => 'Tesla',
@@ -173,11 +267,18 @@ class CarSeeder extends Seeder
                 'engine' => 'Electric',
                 'price_per_day' => 90,
                 'image' => '/images/cars/Tesla_Model_3.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2025,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 1120000,
+                'description' => 'Revolutionize your driving experience with the Tesla Model 3 Electric. This fully electric sedan offers instant torque and impressive acceleration, paired with cutting-edge autopilot technology and over-the-air software updates that continuously improve the vehicle. The minimalist interior features a large central touchscreen, premium materials, and an expansive glass roof, creating a unique sense of space. With zero emissions and low running costs, the Model 3 represents the future of driving, delivering performance, safety, and sustainability in one remarkable package.'
             ],
             [
                 'brand' => 'Chevrolet',
@@ -185,11 +286,18 @@ class CarSeeder extends Seeder
                 'engine' => '6.2L V8',
                 'price_per_day' => 100,
                 'image' => '/images/cars/Chevrolet_Camaro.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2022,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 440000,
+                'description' => 'Embrace the power and heritage of American muscle with the Chevrolet Camaro 6.2L V8. Its aggressive design and powerful stance hint at the thrilling performance within, while the naturally aspirated V8 engine produces exhilarating acceleration and an unmistakable exhaust note. Inside, the driver-focused cockpit blends modern tech with classic muscle car aesthetics, creating an immersive experience. The Camaro is built for those who crave adrenaline, whether on open roads or at the track.'
             ],
             [
                 'brand' => 'Jaguar',
@@ -197,11 +305,18 @@ class CarSeeder extends Seeder
                 'engine' => '3.0L V6',
                 'price_per_day' => 120,
                 'image' => '/images/cars/Jaguar_F-Type.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 35,
                 'stars' => 5,
+                'year' => 2023,
+                'color' => 'Gray',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 296000,
+                'description' => 'Elegance meets raw performance in the Jaguar F-Type 3.0L V6. This stunning sports car captivates with its sculpted exterior and distinctive design elements, while the supercharged V6 delivers thrilling acceleration and a dynamic driving experience. Inside, premium materials and refined craftsmanship create a luxurious cabin tailored for drivers who appreciate both comfort and excitement. The F-Type is a modern icon, blending British sophistication with sports car soul.'
             ],
             [
                 'brand' => 'Lexus',
@@ -209,11 +324,18 @@ class CarSeeder extends Seeder
                 'engine' => '3.5L V6',
                 'price_per_day' => 80,
                 'image' => '/images/cars/Lexus_RX_350.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 40,
                 'stars' => 5,
+                'year' => 2024,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 258000,
+                'description' => 'Indulge in refined luxury and reliability with the Lexus RX 350 3.5L V6. The spacious, quiet interior features high-quality materials, advanced infotainment, and thoughtful touches designed to enhance every journey. The smooth and powerful V6 engine delivers confident performance, complemented by advanced safety and driver-assistance technologies. Perfect for family trips and daily commutes alike, the RX 350 remains a benchmark for premium midsize SUVs.'
             ],
             [
                 'brand' => 'Volvo',
@@ -221,11 +343,18 @@ class CarSeeder extends Seeder
                 'engine' => '2.0L',
                 'price_per_day' => 70,
                 'image' => '/images/cars/Volvo_XC60.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2025,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 785000,
+                'description' => 'Discover Scandinavian design and safety in the Volvo XC60 2.0L. Clean lines and elegant proportions define its exterior, while the minimalist cabin surrounds passengers with luxury materials and cutting-edge technology. The efficient 2.0L engine balances performance with environmental responsibility. Standard safety features and innovative driver aids ensure peace of mind, making the XC60 an ideal choice for families and drivers who value comfort and conscious design.'
             ],
             [
                 'brand' => 'Porsche',
@@ -233,11 +362,18 @@ class CarSeeder extends Seeder
                 'engine' => '3.0L Flat-6',
                 'price_per_day' => 150.00,
                 'image' => '/images/cars/Porsche_911_Carrera.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 40,
                 'stars' => 5,
+                'year' => 2024,
+                'color' => 'White',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 250000,
+                'prix_vente' => 335000,
+                'description' => 'Legendary performance meets timeless design in the Porsche 911 Carrera 3.0L Flat-6. This rear-engined icon delivers pure driving pleasure, thanks to its balanced handling and responsive powertrain. Inside, the cabin combines modern luxury with classic Porsche elements, offering advanced infotainment and supportive seating. From weekend drives to spirited track days, the 911 Carrera embodies over half a century of sports car heritage.'
             ],
             [
                 'brand' => 'Mitsubishi',
@@ -245,11 +381,18 @@ class CarSeeder extends Seeder
                 'engine' => '2.4L',
                 'price_per_day' => 60.00,
                 'image' => '/images/cars/Mitsubishi_Outlander.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 30,
                 'stars' => 5,
+                'year' => 2025,
+                'color' => 'Gray',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 250000,
+                'prix_vente' => 450000,
+                'description' => 'Versatility and comfort come together in the Mitsubishi Outlander 2.4L. Its spacious cabin accommodates passengers and cargo with ease, while the efficient 2.4L engine provides dependable performance. Standard safety features and available all-wheel drive enhance confidence on every journey. Practical, reliable, and family-friendly, the Outlander is built for daily life and weekend getaways alike.'
             ],
             [
                 'brand' => 'Land Rover',
@@ -257,11 +400,18 @@ class CarSeeder extends Seeder
                 'engine' => '3.0L V6',
                 'price_per_day' => 120.00,
                 'image' => '/images/cars/Land_Rover_Range_Rover_Sport.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2023,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 250000,
+                'prix_vente' => 420000,
+                'description' => 'Blending luxury and off-road prowess, the Range Rover Sport 3.0L V6 stands out as a symbol of adventure and refinement. The powerful V6 engine ensures dynamic performance, while the plush interior surrounds passengers with premium materials and advanced technology. Legendary four-wheel-drive capability and cutting-edge driver aids make it equally capable on rugged trails and city streets. The Range Rover Sport is where sophistication meets adventure.'
             ],
             [
                 'brand' => 'GMC',
@@ -269,11 +419,18 @@ class CarSeeder extends Seeder
                 'engine' => '5.3L V8',
                 'price_per_day' => 120.00,
                 'image' => '/images/cars/GMC_Sierra_1500.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 35,
                 'stars' => 4,
+                'year' => 2025,
+                'color' => 'White',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 362000,
+                'description' => 'Strength and durability define the GMC Sierra 1500 5.3L V8. This full-size pickup offers impressive towing and hauling capability, while the powerful V8 engine ensures confident performance under any load. Inside, the cabin blends rugged functionality with comfort and modern connectivity features. Whether at work or play, the Sierra 1500 stands ready to tackle any challenge with style and reliability.'
             ],
             [
                 'brand' => 'Fiat',
@@ -281,11 +438,18 @@ class CarSeeder extends Seeder
                 'engine' => '1.4L',
                 'price_per_day' => 40.00,
                 'image' => '/images/cars/Fiat_500.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 40,
                 'stars' => 5,
+                'year' => 2021,
+                'color' => 'Brown',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 410000,
+                'description' => 'Charming, compact, and full of personality, the Fiat 500 1.4L is made for urban living. Its iconic retro design turns heads, while the efficient engine makes city driving effortless. Inside, the playful cabin offers surprising space and modern connectivity features. Fun to drive and easy to park, the Fiat 500 is a stylish solution for drivers who love life in the city.'
             ],
             [
                 'brand' => 'Mini',
@@ -293,10 +457,17 @@ class CarSeeder extends Seeder
                 'engine' => '1.5L',
                 'price_per_day' => 55.00,
                 'image' => '/images/cars/Mini_Cooper.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
                 'reduce' => 30,
                 'stars' => 5,
+                'year' => 2020,
+                'color' => 'White',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 521000,
+                'description' => 'Iconic design meets agile performance in the Mini Cooper 1.5L. Its compact dimensions and responsive handling make it perfect for spirited driving through city streets or winding roads. The stylish interior offers premium materials and a range of personalization options, reflecting each driver’s unique taste. Blending classic charm with modern technology, the Mini Cooper remains an icon of fun and individuality.'
             ],
             [
                 'brand' => 'Audi',
@@ -304,22 +475,37 @@ class CarSeeder extends Seeder
                 'engine' => '2.0L',
                 'price_per_day' => 80.00,
                 'image' => '/images/cars/Audi_Q5.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 40,
                 'stars' => 5,
-            ], [
+                'year' => 2025,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 1200000,
+                'description' => 'Elevate your daily drive with the Audi Q5 2.0L. Combining sleek design and versatile utility, this luxury SUV offers a refined interior equipped with advanced infotainment and safety systems. The efficient yet powerful 2.0L engine ensures a smooth and confident drive, whether navigating city traffic or exploring new horizons. Premium materials and attention to detail make every journey in the Q5 a pleasure, setting new standards in its class.'
+            ],
+            [
                 'brand' => 'Chevrolet',
                 'model' => 'Tahoe',
                 'engine' => '5.3L V8',
                 'price_per_day' => 110.00,
                 'image' => '/images/cars/Chevrolet_Tahoe.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2024,
+                'color' => 'White',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 552000,
+                'description' => 'Command the road with the Chevrolet Tahoe 5.3L V8. This full-size SUV blends rugged capability with refined comfort, making it ideal for family adventures and urban driving alike. The powerful V8 engine ensures confident towing and smooth acceleration, while the spacious interior offers seating for up to eight and premium materials throughout. Advanced safety systems, intuitive infotainment, and versatile cargo space complete the package, making the Tahoe a trusted choice for drivers who demand strength and sophistication in equal measure.'
             ],
             [
                 'brand' => 'Ford',
@@ -327,11 +513,18 @@ class CarSeeder extends Seeder
                 'engine' => '3.5L V6',
                 'price_per_day' => 95.00,
                 'image' => '/images/cars/Ford_Explorer.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 30,
                 'stars' => 5,
+                'year' => 2025,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 299000,
+                'description' => 'Adventure awaits in the Ford Explorer 3.5L V6, a versatile SUV built for modern families and explorers alike. Its powerful V6 engine provides smooth and responsive performance, perfect for highway cruising or weekend getaways. Inside, you’ll find a spacious cabin with three rows of seating, cutting-edge infotainment, and smart storage solutions for every passenger. With a bold design and advanced driver-assistance features, the Explorer offers a confident, connected, and comfortable ride wherever your journey takes you.'
             ],
             [
                 'brand' => 'Jeep',
@@ -339,11 +532,18 @@ class CarSeeder extends Seeder
                 'engine' => '3.6L V6',
                 'price_per_day' => 100.00,
                 'image' => '/images/cars/Jeep_Wrangler.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 20,
                 'stars' => 5,
+                'year' => 2012,
+                'color' => 'Gray',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 420000,
+                'description' => 'Iconic, rugged, and unstoppable, the Jeep Wrangler 3.6L V6 is built to conquer every trail and city street. Its distinctive design pays homage to a legendary off-road heritage, while the robust V6 engine and advanced 4x4 systems deliver unmatched capability. Inside, the Wrangler balances utility with comfort, featuring modern tech and removable tops and doors for a true open-air experience. For adventurers who crave freedom and authenticity, the Wrangler is more than a vehicle—it’s a lifestyle.'
             ],
             [
                 'brand' => 'Mazda',
@@ -351,11 +551,18 @@ class CarSeeder extends Seeder
                 'engine' => ' 2.5L',
                 'price_per_day' => 65.00,
                 'image' => '/images/cars/Mazda_CX-5.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 15,
                 'stars' => 5,
+                'year' => 2023,
+                'color' => 'Black',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 278000,
+                'description' => 'Elegant design and engaging performance define the Mazda CX-5 2.5L. Its sleek exterior is matched by a refined interior featuring high-quality materials, intuitive technology, and thoughtful comfort for every passenger. The responsive 2.5L engine ensures a spirited yet efficient drive, whether navigating urban streets or winding roads. Advanced safety systems and Mazda’s signature driving dynamics create an SUV that’s as enjoyable to drive as it is practical for daily life.'
             ],
             [
                 'brand' => 'Hyundai',
@@ -363,11 +570,18 @@ class CarSeeder extends Seeder
                 'engine' => ' 2.0L',
                 'price_per_day' => 50.00,
                 'image' => '/images/cars/Hyundai_Tucson.jpg',
-                'quantity' => 1,
+                'quantity' => 12,
                 'status' => 'Available',
 
                 'reduce' => 40,
                 'stars' => 5,
+                'year' => 2010,
+                'color' => 'White',
+                'seats' => 7,
+                'doors' => 5,
+                'mileage' => 25000,
+                'prix_vente' => 285000,
+                'description' => 'Bold style meets everyday versatility in the Hyundai Tucson 2.0L. This compact SUV boasts a striking design, modern LED lighting, and a spacious interior with smart connectivity features. The efficient 2.0L engine delivers a smooth, confident ride, while advanced safety technologies protect you and your loved ones. Flexible cargo space and comfortable seating make the Tucson ideal for everything from errands to weekend getaways, redefining what you can expect from a compact SUV.'
             ],
         ];
 
@@ -382,6 +596,13 @@ class CarSeeder extends Seeder
                 'status' => $car['status'],
                 'reduce' => $car['reduce'],
                 'stars' => $car['stars'],
+                'color' => $car['color'],
+                'seats' => $car['seats'],
+                'doors' => $car['doors'],
+                'mileage' => $car['mileage'],
+                'description' => $car['description'],
+                'prix_vente' => $car['prix_vente'],
+                'year' => $car['year'],
             ]);
         }
     }

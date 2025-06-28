@@ -30,7 +30,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Reservation::class);
     }
-
+    public function ventes()
+    {
+        return $this->hasMany(Vente::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

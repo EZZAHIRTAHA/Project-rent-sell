@@ -288,7 +288,7 @@
 
                                 <li>
                                     <a href="{{ route('clientReservation') }}"
-                                        class="block px-4 py-2 hover:bg-pr-200 ">Reservations</a>
+                                        class="block px-4 py-2 hover:bg-pr-200 ">Historique</a>
                                 </li>
 
                                 <li>

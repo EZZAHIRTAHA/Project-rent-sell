@@ -129,11 +129,11 @@
             present your reservation invoice (digital or printed) and then pay and get your car</p>
         <div class="inv-header">
             <div>
-                <h2 style="color: #ff9b00">Real Rent Car</h2>
+                <h2 style="color: #ff9b00">Rent & Sell Car</h2>
                 <ul>
-                    <li>DR ANABDOUR AMMELEN </li>
-                    <li>TIZNIT</li>
-                    <li>+212637998660 | contact.galdi@gmail.com</li>
+                    <li>Mr Taha EZZAHIR </li>
+                    <li>SALE</li>
+                    <li>+212633xxxxxx | contact.mouad_TAKHDOUKHI@gmail.com</li>
                 </ul>
                 <h2>Client</h2>
                 <ul>

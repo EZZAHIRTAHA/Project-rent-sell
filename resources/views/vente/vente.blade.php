@@ -39,7 +39,7 @@
     </div>
 
     <div class="p-4">
-        <h3 class="text-lg font-bold text-gray-800">{{ $car->brand }} {{ $car->model }} {{ $car->engine }}</h3>
+        <h3 class="text-lg font-bold text-gray-800"><a href="{{ route('car.buy', ['car' => $car->id]) }}">{{ $car->brand }} {{ $car->model }} {{ $car->engine }}</a></h3>
 
         <div class="mt-2">
             <p class="text-2xl font-extrabold text-gray-900">{{ number_format($car->prix_vente, 2) }} <span class="text-base font-semibold">DH</span></p>

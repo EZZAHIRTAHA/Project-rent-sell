@@ -16,7 +16,7 @@ use App\Http\Controllers\CouponController;
 use App\Models\User;
 use App\Models\Car;
 use App\Models\Reservation;
-
+use App\Models\Vente;
 
 // ------------------- guest routes --------------------------------------- //
 Route::get('/', function () {
@@ -127,7 +127,8 @@ Route::post('/buy/{car}', [VenteController::class, 'store'])->name('car.buyStore
 Route::get('/reservations', function () {
 
     $reservations = Reservation::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-    return view('clientReservations', compact('reservations'));
+    $ventes = Vente::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+    return view('clientReservations', compact('reservations','ventes'));
 })->name('clientReservation')->middleware('auth', 'restrictAdminAccess');
 
 

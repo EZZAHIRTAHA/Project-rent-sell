@@ -8,6 +8,24 @@
                 <h2 class=" ms-4 max-w-full font-car md:text-6xl text-4xl">{{ $car->brand }} {{ $car->model }}
                     {{ $car->engine }}
                 </h2>
+                <div class="mt-6 ms-4">
+    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Description</h3>
+    <p class="text-gray-600 leading-relaxed">
+        {!! nl2br(e($car->description)) !!}
+    </p>
+</div>
+
+<div class="mt-6 ms-4 grid grid-cols-2 gap-4 text-gray-700">
+    <div><strong>Brand:</strong> {{ $car->brand }}</div>
+    <div><strong>Model:</strong> {{ $car->model }}</div>
+    <div><strong>Engine:</strong> {{ $car->engine }}</div>
+    <div><strong>Year:</strong> {{ $car->year }}</div>
+    <div><strong>Color:</strong> {{ $car->color }}</div>
+    <div><strong>Seats:</strong> {{ $car->seats }}</div>
+    <div><strong>Doors:</strong> {{ $car->doors }}</div>
+    <div><strong>Mileage:</strong> {{ $car->mileage }} km</div>
+    {{-- Add any other fields you have --}}
+</div>
 
                 <div class=" flex items-end mt-8 ms-4">
                     <h3 class="font-car text-gray-500 text-2xl">Price:</h3>
