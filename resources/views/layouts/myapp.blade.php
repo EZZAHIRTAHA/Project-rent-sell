@@ -32,7 +32,8 @@
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl drop-shadow-2xl">
                     {{-- LOGO --}}
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img loading="lazy" src="/images/logos/LOGOtext.png" class="mr-3 h-12" alt="Flowbite Logo" />
+                        <img loading="lazy" src="/images/logos/logo_app.png" class="m-[-30px] w-48" alt="Flowbite Logo" />
+                        
                     </a>
 
                     {{-- login & Register buttons --}}
@@ -46,7 +47,7 @@
                         </a>
                         <a href="{{ route('register') }}">
                             <button
-                                class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 ">
+                                class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-pr-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-pr-200 dark:text-white dark:hover:text-gray-900 ">
                                 <span
                                     class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-sec-600 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                                     Register
@@ -134,7 +135,8 @@
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     {{-- LOGO --}}
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img loading="lazy" src="/images/logos/LOGOtext.png" class="mr-3 h-12" alt="Flowbite Logo" />
+                        <img loading="lazy" src="/images/logos/logo_app.png" class="m-[-30px] w-48" alt="Flowbite Logo" />
+
                     </a>
 
                     {{-- Dropdown button --}}
@@ -346,8 +348,9 @@
                 <div class="md:flex md:justify-between">
                     <div class="mb-12 md:mb-0 flex justify-center ">
                         <a href="" class="flex items-center">
-                            <img loading="lazy" src="/images/logos/LogoTextDark.png" class="mr-3 h-24"
-                                alt="Logo" />
+                            
+                                                        <img loading="lazy" src="/images/logos/logo_app.png" class="m-[-30px] w-48" alt="Flowbite Logo" />
+
                         </a>
                     </div>
 
@@ -424,7 +427,7 @@
                                 <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                 <style>
                                     svg {
-                                        fill: #ea9800
+                                        fill: #69c7ff
                                     }
                                 </style>
                                 <path
