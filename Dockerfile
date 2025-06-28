@@ -146,6 +146,9 @@ RUN echo '#!/bin/sh' > /usr/local/bin/start.sh && \
     echo 'php artisan storage:link || true' >> /usr/local/bin/start.sh && \
     echo 'echo "Running migrations..."' >> /usr/local/bin/start.sh && \
     echo 'php artisan migrate --force || true' >> /usr/local/bin/start.sh && \
+    echo 'echo "Running specific migrations manually..."' >> /usr/local/bin/start.sh && \
+    echo 'php artisan migrate --path=database/migrations/2025_06_28_120737_add_description_to_cars_table.php --force || true' >> /usr/local/bin/start.sh && \
+    echo 'php artisan migrate --path=database/migrations/2025_06_28_123146_add_details_to_cars_table.php --force || true' >> /usr/local/bin/start.sh && \
     echo 'echo "Seeding database..."' >> /usr/local/bin/start.sh && \
     echo 'php artisan db:seed --force || true' >> /usr/local/bin/start.sh && \
     echo 'mkdir -p /var/log/supervisor' >> /usr/local/bin/start.sh && \
