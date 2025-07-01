@@ -1,6 +1,7 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */ 
 const flowbitePlugin = require("flowbite/plugin");
 const formsPlugin = require("@tailwindcss/forms");
+
 export default {
     content: [
         "./resources/**/*.blade.php",
@@ -11,19 +12,19 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                car: ["Rubik",'poppins',"sans-serif"],
+                car: ["Rubik", "Poppins", "sans-serif"],
             },
             colors: {
                 pr: {
-                    100: "#fff5e6",
-                    200: "#ffd799",
-                    300: "#ffc366",
-                    400: "#ff9b00",
-                    500: "#e68c00",
-                    600: "#e68c00",
-                    700: "#cc7c00",
-                    800: "#b36d00",
-                    900: "#995d00",
+                    100: "#e0f2ff",
+                    200: "#b3e1ff",
+                    300: "#80cfff",
+                    400: "#4dbdff",
+                    500: "#1aa9ff", // brighter blue
+                    600: "#0094e6",
+                    700: "#007acc",
+                    800: "#005fa3",
+                    900: "#00457a",
                 },
                 sec: {
                     100: "#fafafa",
@@ -39,6 +40,5 @@ export default {
             },
         },
     },
-    plugins: [flowbitePlugin, formsPlugin,],
+    plugins: [flowbitePlugin, formsPlugin],
 };
-

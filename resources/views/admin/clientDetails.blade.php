@@ -17,7 +17,7 @@
                     <h2 class="text-lg font-medium text-green-600"><span
                             class="text-lg font-car font-normal text-gray-500">Active
                             Reservations: </span>{{ $user->reservations->where('status', 'Active')->count() }}</h2>
-                    <h2 class="text-lg font-medium text-yellow-300"><span
+                    <h2 class="text-lg font-medium text-pr-300"><span
                             class="text-lg font-car font-normal text-gray-500">Pending
                             Reservations: </span>{{ $user->reservations->where('status', 'Pending')->count() }}</h2>
                     <h2 class="text-lg font-medium text-Black"><span
@@ -70,7 +70,7 @@
                                     <div class="px-4 py-3 text-sm ">
                                         @if ($reservation->payment_status == 'Pending')
                                             <span
-                                                class="p-2 text-white rounded-md bg-yellow-300 ">{{ $reservation->payment_status }}</span>
+                                                class="p-2 text-white rounded-md bg-pr-300 ">{{ $reservation->payment_status }}</span>
                                         @elseif ($reservation->payment_status == 'Canceled')
                                             <span
                                                 class="p-2 text-white rounded-md bg-red-500 ">{{ $reservation->payment_status }}</span>
@@ -85,7 +85,7 @@
                                     <div class="px-4 py-3 text-sm ">
                                         @if ($reservation->status == 'Pending')
                                             <span
-                                                class="p-2 text-white rounded-md bg-yellow-300 ">{{ $reservation->status }}</span>
+                                                class="p-2 text-white rounded-md bg-pr-300 ">{{ $reservation->status }}</span>
                                         @elseif ($reservation->status == 'Ended')
                                             <span
                                                 class="p-2 text-white rounded-md bg-black ">{{ $reservation->status }}</span>

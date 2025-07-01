@@ -51,7 +51,7 @@
         <div class="flex items-center justify-between mt-3">
             <div class="flex items-center">
                 @for ($i = 0; $i < $car->stars; $i++)
-                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg class="w-4 h-4 text-pr-400" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 
                         1.902 0l1.07 3.292a1 1 0 
                         00.95.69h3.462c.969 0 1.371 1.24.588 
@@ -67,7 +67,7 @@
                     </svg>
                 @endfor
             </div>
-            <span class="text-sm bg-yellow-300 text-yellow-900 px-2 py-0.5 rounded font-semibold">{{ $car->stars }}.0</span>
+            <span class="text-sm bg-pr-300 text-pr-900 px-2 py-0.5 rounded font-semibold">{{ $car->stars }}.0</span>
         </div>
 
         <p class="mt-2 text-sm text-gray-700"><strong>Available:</strong> {{ $car->quantity }} cars</p>

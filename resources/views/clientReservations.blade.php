@@ -26,9 +26,9 @@
                     </div>
 
                     <div
-                        class="bg-yellow-300 p-4 rounded-md border-2 border-yellow-700 flex flex-col justify-center items-center">
+                        class="bg-pr-300 p-4 rounded-md border-2 border-pr-700 flex flex-col justify-center items-center">
                         <p class="text-lg font-car font-normal text-gray-500">Pending Reservations </p>
-                        <h2 class="font-medium text-yellow-600 text-3xl">
+                        <h2 class="font-medium text-pr-600 text-3xl">
                             {{ Auth::user()->reservations->where('status', 'Pending')->count() }}</h2>
                     </div>
 
@@ -73,6 +73,7 @@
                             <p class="text-pr-600 font-semibold text-lg">
                                 {{ Carbon\Carbon::parse($reservation->start_date)->format('y-m-d') }}</p>
                         </div>
+<<<<<<< HEAD
                         <div class="flex gap-2 items-center">
                             <p class="text-lg font-medium">To: </p>
                             <p class="text-pr-600 font-semibold text-lg">
@@ -82,6 +83,81 @@
                             <p class="text-lg font-medium">Price: </p>
                             <p class="text-pr-600 font-semibold text-lg">{{ $reservation->total_price }} <span
                                     class="text-black">$</span> </p>
+=======
+                        <div class="m-3 p-1 md:w-2/3 w-full">
+                            <h2 class="mt-2 font-car text-gray-800 text-2xl font-medium">{{ $reservation->car->brand }}
+                                {{ $reservation->car->model }} {{ $reservation->car->engine }}</h2>
+                            <div class="mt-4 flex md:flex-row flex-col justify-start md:gap-10 gap-5">
+                                <div class="flex gap-2 items-center">
+                                    <p class="text-lg font-medium">From: </p>
+                                    <p class="text-pr-600 font-semibold text-lg">
+                                        {{ Carbon\Carbon::parse($reservation->start_date)->format('y-m-d') }}</p>
+                                </div>
+                                <div class="flex gap-2 items-center">
+                                    <p class="text-lg font-medium">To: </p>
+                                    <p class="text-pr-600 font-semibold text-lg">
+                                        {{ Carbon\Carbon::parse($reservation->end_date)->format('y-m-d') }}</p>
+                                </div>
+                                <div class="flex gap-2 items-center">
+                                    <p class="text-lg font-medium">Price: </p>
+                                    <p class="text-pr-600 font-semibold text-lg">{{ $reservation->total_price }} <span
+                                            class="text-black">$</span> </p>
+                                </div>
+
+
+
+                            </div>
+                            <div class="mt-8 flex justify-start md:gap-16 gap-6">
+
+                                <div class="flex md:gap-2 items-center">
+                                    <p class="text-lg font-medium">Payment: </p>
+                                    <div class="px-4 py-3 text-sm ">
+                                        @if ($reservation->payment_status == 'Pending')
+                                            <span
+                                                class="p-2 text-white rounded-md bg-pr-300 ">{{ $reservation->payment_status }}</span>
+                                        @elseif ($reservation->payment_status == 'Canceled')
+                                            <span
+                                                class="p-2 text-white rounded-md bg-red-500 ">{{ $reservation->payment_status }}</span>
+                                        @elseif ($reservation->payment_status == 'Paid')
+                                            <span
+                                                class="p-2 text-white rounded-md bg-green-500 px-5">{{ $reservation->payment_status }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="flex gap-2 items-center">
+                                    <p class="text-lg font-medium">Reservation: </p>
+                                    <div class="px-4 py-3 text-sm ">
+                                        @if ($reservation->status == 'Pending')
+                                            <span
+                                                class="p-2 text-white rounded-md bg-pr-300 ">{{ $reservation->status }}</span>
+                                        @elseif ($reservation->status == 'Ended')
+                                            <span
+                                                class="p-2 text-white rounded-md bg-black ">{{ $reservation->status }}</span>
+                                        @elseif ($reservation->status == 'Active')
+                                            <span
+                                                class="p-2 text-white rounded-md bg-green-500 px-4">{{ $reservation->status }}</span>
+                                        @elseif ($reservation->status == 'Canceled')
+                                            <span
+                                                class="p-2 text-white rounded-md bg-red-500 ">{{ $reservation->status }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="w-[350px] h-[250px]  overflow-hidden p-1  md:hidden  mx-auto mt-3 rounded-md">
+                                <img loading="lazy" class="w-full h-full object-cover overflow-hidden rounded-md"
+                                    src="{{ $reservation->car->image }}" alt="">
+                            </div>
+
+                            <div class="mt-8 text-center w-full px-2">
+                                <a href="{{ route('invoice', ['reservation' => $reservation->id]) }}" target="_blank">
+                                    <button class="bg-pr-400 p-3 text-white font-bold hover:bg-black w-full rounded-md ">
+                                        Get Reservation Invoice</button>
+                                </a>
+                            </div>
+
+>>>>>>> 1b832dfcb1f31004c9dd3e025082e66ddb1695ec
                         </div>
                     </div>
                     <div class="mt-8 flex justify-start md:gap-16 gap-6">
