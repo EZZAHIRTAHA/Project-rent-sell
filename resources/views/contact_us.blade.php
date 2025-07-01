@@ -102,8 +102,8 @@
                     </svg>
                 </div>
                 <h2 class="text-lg font-bold text-gray-800 font-car">Address:</h2>
-                <p class="text-sm font-light text-gray-700 font-car">DR ANABDOUR AMMELEN TIZNIT</p>
-                <p class="text-sm font-light text-gray-700 font-car">Zip Code/Postal code:85450</p>
+                <p class="text-sm font-light text-gray-700 font-car">EST KENITRA</p>
+                <p class="text-sm font-light text-gray-700 font-car">Zip Code/Postal code:00000</p>
             </div>
             <div>
                 <div class="w-20 p-6 mx-auto mb-3 bg-gray-200 rounded-md ">
